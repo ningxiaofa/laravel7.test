@@ -18,6 +18,6 @@ class IndexController extends Controller
 
     public function view()
     {
-        return view('welcome');
+        return view('view');
     }
 }
