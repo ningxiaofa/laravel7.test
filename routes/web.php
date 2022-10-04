@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,8 +22,8 @@ Route::get('/index', 'IndexController@index');
 
 Route::get('/index/view', 'IndexController@view');
 
-//
-Route::get('form_without_csrf_token', function (){
+// Test csrf
+Route::get('form_without_csrf_token', function () {
     return '<form method="POST" action="/hello_from_form"><button type="submit">提交</button></form>';
 });
 
@@ -30,6 +31,6 @@ Route::get('form_with_csrf_token', function () {
     return '<form method="POST" action="/hello_from_form">' . csrf_field() . '<button type="submit">提交</button></form>';
 });
 
-Route::post('hello_from_form', function (){
-   return 'hello laravel!';
+Route::post('hello_from_form', function () {
+    return 'hello laravel!';
 });

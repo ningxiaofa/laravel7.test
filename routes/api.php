@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// http://laravel7.test:8080/api/index
+Route::get('/index', function (Request $request) {
+    return [
+        'file path' => __FILE__
+    ];
+    return $request->user();
+});
