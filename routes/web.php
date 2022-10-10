@@ -22,6 +22,9 @@ Route::get('/index', 'IndexController@index');
 
 Route::get('/index/view', 'IndexController@view');
 
+// Test whoop component
+Route::get('/index/whoop', 'IndexController@whoop');
+
 // Test csrf
 Route::get('form_without_csrf_token', function () {
     return '<form method="POST" action="/hello_from_form"><button type="submit">提交</button></form>';

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -26,5 +27,17 @@ class IndexController extends Controller
     public function getPost(Request $request)
     {
         return $request->post();
+    }
+
+    // http://laravel7.test:8080/whoop
+    // http://laravel7.test:8080/index/whoop
+    public function whoop(){
+        try {
+            throw new \Exception('Just for test whoop component');
+        } catch (\Throwable $th) {
+            //throw $th;
+            var_dump($th->getMessage());
+        }
+        dd('whoop');
     }
 }
